@@ -12,16 +12,27 @@
 <body>
     <header></header>
     <main>
-        <h1>MOQOPON 🔥💧🌱</h1>
-        <section id="seleccionar-mascota">
-            <h2>Elige tu mascota:</h2>
-            <label for="hipodoge">Hipodoge</label>
-            <input type="radio" name="mascota" id="hipodoge" />
-            <label for="capipepo">Capipepo</label>
-            <input type="radio" name="mascota" id="capipepo" />
-            <label for="ratigueya">Ratigueya</label>
-            <input type="radio" name="mascota" id="ratigueya" />
-            <button id="boton-mascota">Seleccionar</button>
+        <h1 class="title">MOQOPON</h1>
+        <section class="container-cards" id="seleccionar-mascota">
+            <h2 class="subtitle">Elige tu mascota:</h2>
+            <div class="content-cards">
+                <label class="card-mokepon" for="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="./assets/images/hipodoge.webp" alt="">
+                </label>
+                <input type="radio" name="mascota" id="hipodoge" />
+                <label class="card-mokepon" for="capipepo">
+                    <p>Capipepo</p>
+                    <img src="./assets/images/capipepo.webp" alt="">
+                </label>
+                <input type="radio" name="mascota" id="capipepo" />
+                <label class="card-mokepon" for="ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="./assets/images/ratigueya.webp" alt="">
+                </label>
+                <input type="radio" name="mascota" id="ratigueya" />
+            </div>
+            <button class="content-cards-button" id="boton-mascota">Seleccionar</button>
         </section>
         <section id="seleccionar-ataque">
             <h2>Elige tu ataque:</h2>
