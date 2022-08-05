@@ -6,6 +6,7 @@
 
 html {
     font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body {
     background-color: #042562;
@@ -46,15 +47,21 @@ main {
     background-color: #11468F;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
 }
 .card-mokepon:hover {
     border-radius: 50%;
+    background-color: #fff;
+    color: #042562;
+}
+input:checked + label {
+    border-radius: 50%;
     background-color: #9acd32;
     color: #042562;
-
 }
 .card-mokepon p {
     text-align: center;
+    text-transform: uppercase;
 }
 .card-mokepon img {
     width: 65px;
@@ -63,16 +70,62 @@ main {
     display: block;
     margin: 0 auto;
     padding: 5px;
-    border: 1px solid #11468F;
+    width: 90px;
+    border: 1px solid #fff;
     border-radius: 6px;
     background-color: #11468F;
+    font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     cursor: pointer;
 }
 .content-cards-button:hover {
+    border: 1px solid #9acd32;
     background-color: #042562;
     color: #9acd32;
 }
 input {
     display: none;
+}
+
+/* Second Section */
+
+.container-attack {
+    flex-direction: column;
+    align-items: center;
+}
+.attack-button {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: #11468F;
+    color: #fff;
+}
+.attack-button:hover {
+    background-color: #9acd32;
+    color: #fff;
+    cursor: pointer;
+}
+.attack-button:checked {
+    background-color: #ffff00;
+    color: #fff;
+}
+.container-mensajes {
+    margin: 20px;
+    padding: 20px;
+    font-size: 2rem;
+    border: 1px solid #9acd32;
+    border-radius: 10px;
+    background-color: #11468F;
+    color: #fff;
+}
+.button-reload {
+    display: block;
+    margin: 10px auto;
+    padding-top: 10px;
+    border: none;
+    background-color: #11468F;
+    color: #9acd32;
+    cursor: pointer;
 }

@@ -14,12 +14,15 @@ const $inputRatigueya = $('ratigueya')
 
 $botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
-const $spanMascotaJugador = $('mascotaJugador')
+const $spanMascotaJugador = $('mascota-jugador')
 
-const $spanMascotaEnemigo = $('mascotaEnemigo')
+const $spanMascotaEnemigo = $('mascota-enemigo')
 
-const $sectionMensajes = $('mensajes')
-const $parrafo = $createE('p')
+const $sectionMensajes = $('resultado')
+const $ataquesJugador = $('ataques-jugador')
+const $ataquesEnemigo = $('ataques-enemigo')
+const $nuevoAtaqueJugador = $createE('p')
+const $nuevoAtaqueEnemigo = $createE('p')
 
 const $spanVidasJugador = $('vidas-jugador')
 const $spanVidasEnemigo = $('vidas-enemigo')
@@ -57,7 +60,7 @@ iniciarJuego() */
 
 function seleccionarMascotaJugador() {
     $sectionSeleccionarMascota.style.display = 'none'
-    $sectionSeleccionarAtaque.style.display = 'block'
+    $sectionSeleccionarAtaque.style.display = 'flex'
 
     if($inputHipodoge.checked) {
         $spanMascotaJugador.innerHTML = 'Hipodoge'
@@ -144,18 +147,30 @@ function revisarVidas() {
 }
 
 function crearMensaje(resultado) {
-    $parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' La mascota del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
-    $sectionMensajes.appendChild($parrafo)
+    //$parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' La mascota del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
+    //$sectionMensajes.appendChild($parrafo)
+    $sectionMensajes.innerHTML = resultado
+    $nuevoAtaqueJugador.innerHTML = ataqueJugador
+    $nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+
+    $ataquesJugador.appendChild($nuevoAtaqueJugador)
+    $ataquesEnemigo.appendChild($nuevoAtaqueEnemigo)
 }
+
 function crearMensajeFinal(resultadoFinal) {
-    $parrafo.innerHTML = resultadoFinal
-    $sectionMensajes.appendChild($parrafo)
+    //$parrafo.innerHTML = resultadoFinal
+    //$container-mensajes.appendChild($parrafo)
+    $sectionMensajes.innerHTML = resultadoFinal
 
     $botonFuego.disabled = true
     $botonAgua.disabled = true
     $botonTierra.disabled = true
 
     $sectionReiniciar.style.display = 'block'
+
+    $botonFuego.style.background = '#fff'
+    $botonAgua.style.background = '#fff'
+    $botonTierra.style.background = '#fff'
 }
 
 function reiniciarJuego() {

@@ -16,39 +16,48 @@
         <section class="container-cards" id="seleccionar-mascota">
             <h2 class="subtitle">Elige tu mascota:</h2>
             <div class="content-cards">
+                <input type="radio" name="mascota" id="hipodoge" />
                 <label class="card-mokepon" for="hipodoge">
                     <p>Hipodoge</p>
                     <img src="./assets/images/hipodoge.webp" alt="">
                 </label>
-                <input type="radio" name="mascota" id="hipodoge" />
+                <input type="radio" name="mascota" id="capipepo" />
                 <label class="card-mokepon" for="capipepo">
                     <p>Capipepo</p>
                     <img src="./assets/images/capipepo.webp" alt="">
                 </label>
-                <input type="radio" name="mascota" id="capipepo" />
+                <input type="radio" name="mascota" id="ratigueya" />
                 <label class="card-mokepon" for="ratigueya">
                     <p>Ratigueya</p>
                     <img src="./assets/images/ratigueya.webp" alt="">
                 </label>
-                <input type="radio" name="mascota" id="ratigueya" />
             </div>
             <button class="content-cards-button" id="boton-mascota">Seleccionar</button>
         </section>
-        <section id="seleccionar-ataque">
-            <h2>Elige tu ataque:</h2>
-            <p>Tu mascota <span id="mascotaJugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-            <p>La mascota <span id="mascotaEnemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-            <p>
-                <button id="boton-fuego">Fuego 🔥</button>
-                <button id="boton-agua">Agua 💧</button>
-                <button id="boton-tierra">Tierra 🌱</button>
-            </p>
-        </section>
-        <section id="mensajes">
-        </section>
-        <section id="reiniciar">
-            <button id="boton-reiniciar">Reiniciar</button>
+        <section class="container-attack" id="seleccionar-ataque">
+            <h2 class="subtitle">Elige tu ataque:</h2>
+            <div>
+                <button class="attack-button" id="boton-fuego">Fuego 🔥</button>
+                <button class="attack-button" id="boton-agua">Agua 💧</button>
+                <button class="attack-button" id="boton-tierra">Tierra 🌱</button>
+            </div>
+            <section class="container-mensajes" id="mensajes">
+                <p id="resultado"> Entrena a tu mowopon!!!</p>
+                <section id="reiniciar">
+                    <button class="button-reload" id="boton-reiniciar">Reiniciar</button>
+                </section>
             </section>
+            <div>
+                <div>
+                    <div id="ataques-jugador"></div>
+                    <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+                </div>
+                <div>
+                    <div id="ataques-enemigo"></div>
+                    <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer></footer>
 </body>
