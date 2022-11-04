@@ -1,11 +1,6 @@
-let ataqueJugador
-let ataqueEnemigo
-let vidasJugador = 3
-let vidasEnemigo = 3
-
 // las variables que empiezan con el simbolo de dolar ($) indicarian que es un elemento del DOM
 const $ = id => document.getElementById(id)
-const $createE = element => document.createElement(element)
+const $$ = element => document.createElement(element)
 
 const $botonMascotaJugador = $('boton-mascota')
 const $inputHipodoge = $('hipodoge')
@@ -21,8 +16,8 @@ const $spanMascotaEnemigo = $('mascota-enemigo')
 const $sectionMensajes = $('resultado')
 const $ataquesJugador = $('ataques-jugador')
 const $ataquesEnemigo = $('ataques-enemigo')
-const $nuevoAtaqueJugador = $createE('p')
-const $nuevoAtaqueEnemigo = $createE('p')
+const $nuevoAtaqueJugador = $$('p')
+const $nuevoAtaqueEnemigo = $$('p')
 
 const $spanVidasJugador = $('vidas-jugador')
 const $spanVidasEnemigo = $('vidas-enemigo')
@@ -48,6 +43,26 @@ const $sectionReiniciar = $('reiniciar')
 $sectionSeleccionarAtaque.style.display = 'none'
 $sectionReiniciar.style.display = 'none'
 
+let ataqueJugador
+let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
+
+class Mokepon {
+    constructor(nombre,foto, vida) {
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+    }
+}
+
+let hipodoge = new Mokepon('Hipodoge', './assets/images/hipodoge.webp', 5)
+
+let capipepo = new Mokepon('Capipepo', './assets/images/capipepo.webp', 5)
+
+let ratigueya = new Mokepon('Ratigueya', './assets/images/ratigueya.webp', 5)
+
+console.log(hipodoge, capipepo, ratigueya)
 
 /* function iniciarJuego() {
     $botonFuego.addEventListener('click', ataqueFuego)
@@ -55,8 +70,6 @@ $sectionReiniciar.style.display = 'none'
     $botonTierra.addEventListener('click', ataqueTierra)
 }
 iniciarJuego() */
-
-
 
 function seleccionarMascotaJugador() {
     $sectionSeleccionarMascota.style.display = 'none'
