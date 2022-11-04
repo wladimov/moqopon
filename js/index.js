@@ -43,6 +43,7 @@ const $sectionReiniciar = $('reiniciar')
 $sectionSeleccionarAtaque.style.display = 'none'
 $sectionReiniciar.style.display = 'none'
 
+let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
@@ -53,6 +54,7 @@ class Mokepon {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
+        this.ataques = []
     }
 }
 
@@ -62,7 +64,27 @@ let capipepo = new Mokepon('Capipepo', './assets/images/capipepo.webp', 5)
 
 let ratigueya = new Mokepon('Ratigueya', './assets/images/ratigueya.webp', 5)
 
-console.log(hipodoge, capipepo, ratigueya)
+hipodoge.ataques.push(
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🌱', id:'boton-tierra'},
+)
+capipepo.ataques.push(
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '🌱', id:'boton-tierra'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '🔥', id:'boton-fuego'},
+)
+ratigueya.ataques.push(
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '🔥', id:'boton-fuego'},
+    {nombre: '💧', id:'boton-agua'},
+    {nombre: '🌱', id:'boton-tierra'},
+)
 
 /* function iniciarJuego() {
     $botonFuego.addEventListener('click', ataqueFuego)
