@@ -3,9 +3,6 @@ const $ = id => document.getElementById(id)
 const $$ = element => document.createElement(element)
 
 const $botonMascotaJugador = $('boton-mascota')
-const $inputHipodoge = $('hipodoge')
-const $inputCapipepo = $('capipepo')
-const $inputRatigueya = $('ratigueya')
 
 $botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
@@ -43,11 +40,17 @@ const $sectionReiniciar = $('reiniciar')
 $sectionSeleccionarAtaque.style.display = 'none'
 $sectionReiniciar.style.display = 'none'
 
+const contenedorTarjetas = $('contenedorTarjetas')
+
 let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
+let opcionDePokepones
 let vidasJugador = 3
 let vidasEnemigo = 3
+let $inputHipodoge
+let $inputCapipepo
+let $inputRatigueya
 
 class Mokepon {
     constructor(nombre,foto, vida) {
@@ -86,6 +89,23 @@ ratigueya.ataques.push(
     {nombre: '🌱', id:'boton-tierra'},
 )
 
+mokepones.push(hipodoge, capipepo, ratigueya)
+
+mokepones.forEach((mokepon) => {
+    opcionDePokepones = `
+        <input type="radio" name="mascota" id=${mokepon.nombre} />
+        <label class="card-mokepon" for=${mokepon.nombre}>
+            <p>${mokepon.nombre}</p>
+            <img src=${mokepon.foto} alt="${mokepon.nombre}">
+        </label>
+    `;
+    contenedorTarjetas.innerHTML += opcionDePokepones
+
+    $inputHipodoge = $('Hipodoge')
+    $inputCapipepo = $('Capipepo')
+    $inputRatigueya = $('Ratigueya')
+})
+
 /* function iniciarJuego() {
     $botonFuego.addEventListener('click', ataqueFuego)
     $botonAgua.addEventListener('click', ataqueAgua)
@@ -98,13 +118,13 @@ function seleccionarMascotaJugador() {
     $sectionSeleccionarAtaque.style.display = 'flex'
 
     if($inputHipodoge.checked) {
-        $spanMascotaJugador.innerHTML = 'Hipodoge'
+        $spanMascotaJugador.innerHTML = $inputHipodoge.id
     }
     else if ($inputCapipepo.checked) {
-        $spanMascotaJugador.innerHTML = 'Capipepo'
+        $spanMascotaJugador.innerHTML = $inputCapipepo.id
     }
     else if ($inputRatigueya.checked) {
-        $spanMascotaJugador.innerHTML = 'Ratigueya'
+        $spanMascotaJugador.innerHTML = $inputRatigueya.id
     }
     else {
         alert('Selecciona un Moqopon')
@@ -113,15 +133,16 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaAleatoria = aleatorio(1,3)
+    let mascotaAleatoria = aleatorio(0, mokepones.length -1)
 
-    if (mascotaAleatoria == 1) {
+    $spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+    /* if (mascotaAleatoria == 1) {
         $spanMascotaEnemigo.innerHTML = 'Hipodoge'
     } else if (mascotaAleatoria == 2) {
         $spanMascotaEnemigo.innerHTML = 'Capipepo'
     } else {
         $spanMascotaEnemigo.innerHTML = 'Ratigueya'
-    }
+    } */
 }
 
 function ataqueFuego() {
